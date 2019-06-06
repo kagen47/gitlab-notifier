@@ -3,10 +3,11 @@
         <v-container>
             <v-text-field label="GitLab URL"
                           :value="gitLabUrl"
-                          :loading="isLoading"></v-text-field>
+                          :loading="isLoadingGitLabUrl"></v-text-field>
             <v-text-field label="Personal Access Token"
                           :value="privateToken"
-                          :loading="isLoading">
+                          :loading="isLoadingPrivateToken"
+                          type="Password">
             </v-text-field>
         </v-container>
     </v-form>
@@ -22,22 +23,31 @@
 
         data() {
             return {
-                isLoading: true,
+                isLoadingGitLabUrl: true,
                 gitLabUrl: "",
-                privateToken: ""
+                isLoadingPrivateToken: true,
+                privateToken: "dfaaaad"
             }
         },
         methods: {
             getGitLabUrl() {
-                this.isLoading = true
+                this.isLoadingGitLabUrl = true
                 gitLabClient.getGitLabUrl().then(gitLabUrl => {
                     this.gitLabUrl = gitLabUrl
-                    this.isLoading = false
+                    this.isLoadingGitLabUrl = false
+                })
+            },
+            getPrivateToken() {
+                this.isLoadingPrivateToken = true
+                gitLabClient.getPrivateToken().then(privateToken => {
+                    this.privateToken = privateToken
+                    this.isLoadingPrivateToken = false
                 })
             }
         },
         created() {
             this.getGitLabUrl()
+            this.getPrivateToken()
         }
     }
 </script>

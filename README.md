@@ -8,3 +8,6 @@
 
 ### Merge Request Discussion Notification
 - get request to /merge_requests
+
+### TODO
+- [ ] do something in index.js
