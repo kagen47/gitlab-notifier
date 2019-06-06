@@ -1,0 +1,26 @@
+{
+  "name": "GitLab Notifier",
+  "version": "1.0",
+  "description": "Notifies user when there is an update on GitLab.",
+  "permissions": [
+    "alarms",
+    "notifications",
+    "storage"
+  ],
+  "background": {
+    "scripts": [
+      "js/bundle.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Test",
+    "default_popup": "test.html"
+  },
+  "icons": {
+    "16": "images/gitlab16.png",
+    "48": "images/gitlab48.png",
+    "128": "images/gitlab128.png"
+  },
+  "manifest_version": 2
+}
