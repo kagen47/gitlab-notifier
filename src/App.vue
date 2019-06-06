@@ -16,18 +16,20 @@
     </v-toolbar>
 
     <v-content>
-      <HelloWorld/>
+        <GitLab/>
     </v-content>
   </v-app>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import GitLab from './components/GitLab'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    GitLab
   },
   data () {
     return {
@@ -36,3 +38,9 @@ export default {
   }
 }
 </script>
+
+<style>
+    body {
+      min-width: 300px;
+    }
+</style>

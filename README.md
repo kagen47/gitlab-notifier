@@ -1,29 +1,10 @@
-# gitlab-notifier
+# GitLab Notifier
 
-## Project setup
-```
-npm install
-```
+# Dev Notes
+### Todo Notification
+- get request to /todos
+- get "created_at" from response
+- notify if "created_at" date is 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Merge Request Discussion Notification
+- get request to /merge_requests

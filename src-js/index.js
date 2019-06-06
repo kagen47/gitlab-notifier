@@ -1,11 +1,13 @@
-import * as glClient from './gitlabClient'
+import {GitLabClient} from './gitlab-client'
 
-chrome.browserAction.
+const client = new GitLabClient()
+
+client.setGitLabUrl("this is a gitlab url")
 
 chrome.notifications.create({
     type: 'basic',
     iconUrl: 'images/gitlab48.png',
-    title: 'test',
+    title: 'testing',
     message: 'drink water',
     buttons: [
         {title: 'keep it flowing'}
