@@ -26,7 +26,7 @@
                 isLoadingGitLabUrl: true,
                 gitLabUrl: "",
                 isLoadingPrivateToken: true,
-                privateToken: "dfaaaad"
+                privateToken: ""
             }
         },
         methods: {
