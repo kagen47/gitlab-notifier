@@ -35,6 +35,7 @@ export class GitLabClient {
 
     async getLastCreatedAt() {
         const data = await this.chromeStorageClient.get()
+        console.log(data)
         return data[CREATED_AT_KEY]
     }
 
@@ -56,13 +57,16 @@ export class GitLabClient {
             params: {
                 'per_page': '1'
             }
+        }).catch(err => {
+            throw err
         })
 
         const newestTodo = todos.data[0]
 
         const isNewTodo = await this.isNewTodo(newestTodo)
         if (isNewTodo) {
-            await this.setLastCreatedAt(todo.created_at)
+            console.log("here")
+            await this.setLastCreatedAt(newestTodo.created_at)
         }
 
         return newestTodo
@@ -72,6 +76,10 @@ export class GitLabClient {
         const lastCreatedAt = await this.getLastCreatedAt()
         const createdAt = todo.created_at
 
-        lastCreatedAt === undefined || moment(createdAt).isAfter(moment(lastCreatedAt))
+        console.log("last createe")
+        console.log(lastCreatedAt)
+
+
+        return lastCreatedAt === undefined || moment(createdAt).isAfter(moment(lastCreatedAt))
     }
 }
